@@ -22,6 +22,14 @@
         android:text="Choose picture to invert"
         android:layout_alignParentBottom="true"/>
 
+    <!--<Button-->
+        <!--android:id="@+id/b_w_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/choose_button"-->
+        <!--android:layout_alignTop="@id/choose_button"-->
+        <!--android:text="@string/black_and_white"/>-->
+
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         mChooseButton = (Button) findViewById(R.id.choose_button);
         mImageView = (ImageView) findViewById(R.id.image);
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
-        mProgressBar.setMax(100); //By default, progress bar max is set to 100.
 
         mImageView.setImageResource(R.drawable.placeholder);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 selectImage();
             }
         });
+//        findViewById(R.id.b_w_button).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+
     }
 
     @Override
@@ -70,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
         protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
-                return invertImageColors(bitmap);
+                return sepia(bitmap);
+//                return invertImageColors(bitmap);
             } catch (FileNotFoundException e) {
                 Log.d(TAG, "Image uri is not received or recognized");
             }
@@ -88,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
+        //Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
         protected void onPostExecute(Bitmap image) {
             super.onPostExecute(image);
@@ -101,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressBar.setVisibility(View.VISIBLE);
-            //TODO: Complete this method
         }
 
         private Bitmap invertImageColors(Bitmap bitmap) {
@@ -112,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < mutableBitmap.getWidth(); i++) {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
                     //Get Pixel
-                    int color = mutableBitmap.getPixel(i,j);
+                    int color = mutableBitmap.getPixel(i, j);
 
                     //Get color values of pixels.
                     int redValue = Color.red(color);
@@ -120,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
                     int blueValue = Color.blue(color);
 
                     //Invert? the values.
-                    redValue = 255-redValue;
+                    redValue = 255 - redValue;
                     greenValue = 255 - greenValue;
-                    blueValue = 255- blueValue;
+                    blueValue = 255 - blueValue;
 
                     //Create new color, and set to pixel.
                     color = Color.argb(255, redValue, greenValue, blueValue);
@@ -136,6 +143,98 @@ public class MainActivity extends AppCompatActivity {
             }
             return mutableBitmap;
         }
+
+        private Bitmap greyScale(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    int maxVal = Math.max(redValue, greenValue);
+                    maxVal = Math.max(maxVal,blueValue);
+
+                    color =Color.argb(255, maxVal, maxVal,maxVal);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
+
+        private Bitmap bloodStained(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color)/5;
+                    int blueValue = Color.blue(color)/5;
+
+
+                    color =Color.argb(255, redValue, greenValue, blueValue);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
+
+        private Bitmap sepia(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    //Get lowest grey value
+                    int minValue = Math.min(redValue,greenValue);
+                    minValue = Math.min(minValue,blueValue);
+
+                    //Add a little brownish hue to it.
+                    redValue = minValue+112;
+                    greenValue= minValue+66;
+                    blueValue=minValue+20;
+
+                    int[] values = {redValue, greenValue,blueValue};
+
+                    //Set any values that are above 255, to 255.
+                    for(int x=0;x<3;x++){
+                        if (values[x]>255){
+                            values[x]=255;
+                        }
+                    }
+
+                    color =Color.argb(255, values[0],values[1],values[2]);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
     }
+
+
 }
+
+
 
