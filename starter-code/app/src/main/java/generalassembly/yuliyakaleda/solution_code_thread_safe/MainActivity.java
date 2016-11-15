@@ -3,6 +3,7 @@ package generalassembly.yuliyakaleda.solution_code_thread_safe;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == MainActivity.RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
 
-            //TODO: Instantiate the async task and execute it
+            ImageProcessingAsyncTask task = new ImageProcessingAsyncTask();
+            task.execute(selectedImage);
         }
     }
 
@@ -59,12 +61,10 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
-    //TODO: Fill in the parameter types
-    private class ImageProcessingAsyncTask extends AsyncTask<> {
+    private class ImageProcessingAsyncTask extends AsyncTask<Uri, Integer, Bitmap> {
 
-        //TODO: Fill in the parameter type - look at the expected type for the parameter to openInputStream()
         @Override
-        protected Bitmap doInBackground() {
+        protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
                 return invertImageColors(bitmap);
@@ -74,23 +74,22 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        //TODO: Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
         @Override
-        protected void onProgressUpdate() {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            //TODO: Update the progress bar
+            mProgressBar.setProgress(values[0]);
         }
 
-        //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
-        protected void onPostExecute() {
-            //TODO: Complete this method
+        protected void onPostExecute(Bitmap bitmap) {
+            mProgressBar.setVisibility(View.INVISIBLE);
+            mImageView.setImageBitmap(bitmap);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //TODO: Complete this method
+            mProgressBar.setVisibility(View.VISIBLE);
         }
 
         private Bitmap invertImageColors(Bitmap bitmap) {
@@ -100,11 +99,16 @@ public class MainActivity extends AppCompatActivity {
             //Loop through each pixel, and invert the colors
             for (int i = 0; i < mutableBitmap.getWidth(); i++) {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
-                    //TODO: Get the Red, Green, and Blue values for the current pixel, and reverse them
-                    //TODO: Set the current pixel's color to the new, reversed value
+                    int color = mutableBitmap.getPixel(i,j);
+
+                    mutableBitmap.setPixel(i,j, Color.argb(
+                            255-Color.alpha(color),
+                            255-Color.red(color),
+                            255-Color.green(color),
+                            255-Color.blue(color)));
                 }
                 int progressVal = Math.round((long) (100 * (i / (1.0 * mutableBitmap.getWidth()))));
-                //TODO: Update the progress bar. progressVal is the current progress value out of 100
+                publishProgress(progressVal);
             }
             return mutableBitmap;
         }
