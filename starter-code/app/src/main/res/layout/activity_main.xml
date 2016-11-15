@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
+
 
 </RelativeLayout>
