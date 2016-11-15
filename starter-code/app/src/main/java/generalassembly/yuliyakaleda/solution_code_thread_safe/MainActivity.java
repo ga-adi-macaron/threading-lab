@@ -3,6 +3,7 @@ package generalassembly.yuliyakaleda.solution_code_thread_safe;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mChooseButton = (Button) findViewById(R.id.choose_button);
         mImageView = (ImageView) findViewById(R.id.image);
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
-        mProgressBar.setMax(100);
+        mProgressBar.setMax(100); //By default, progress bar max is set to 100.
 
         mImageView.setImageResource(R.drawable.placeholder);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == MainActivity.RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
 
-            //TODO: Instantiate the async task and execute it
+            AsyncTask<Uri, Integer, Bitmap> mMyTask = new ImageProcessingAsyncTask();
+            mMyTask.execute(selectedImage);
+            // Instantiate the async task and execute it
         }
     }
 
@@ -59,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
-    //TODO: Fill in the parameter types
-    private class ImageProcessingAsyncTask extends AsyncTask<> {
+    //Fill in the parameter types
+    private class ImageProcessingAsyncTask extends AsyncTask<Uri, Integer, Bitmap> {
 
-        //TODO: Fill in the parameter type - look at the expected type for the parameter to openInputStream()
+        // Fill in the parameter type - look at the expected type for the parameter to openInputStream()
         @Override
-        protected Bitmap doInBackground() {
+        protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
                 return invertImageColors(bitmap);
@@ -74,22 +77,30 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
 
-        //TODO: Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
+        //Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
         @Override
-        protected void onProgressUpdate() {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            //TODO: Update the progress bar
+
+            //Update the progress bar
+            mProgressBar.setMax(values[0]);
+            mProgressBar.setProgress(values[1]);
         }
+
 
         //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
-        protected void onPostExecute() {
-            //TODO: Complete this method
+        protected void onPostExecute(Bitmap image) {
+            super.onPostExecute(image);
+            mImageView.setImageBitmap(image);
+            mProgressBar.setVisibility(View.INVISIBLE);
+
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            mProgressBar.setVisibility(View.VISIBLE);
             //TODO: Complete this method
         }
 
@@ -100,11 +111,28 @@ public class MainActivity extends AppCompatActivity {
             //Loop through each pixel, and invert the colors
             for (int i = 0; i < mutableBitmap.getWidth(); i++) {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
-                    //TODO: Get the Red, Green, and Blue values for the current pixel, and reverse them
-                    //TODO: Set the current pixel's color to the new, reversed value
+                    //Get Pixel
+                    int color = mutableBitmap.getPixel(i,j);
+
+                    //Get color values of pixels.
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    //Invert? the values.
+                    redValue = 255-redValue;
+                    greenValue = 255 - greenValue;
+                    blueValue = 255- blueValue;
+
+                    //Create new color, and set to pixel.
+                    color = Color.argb(255, redValue, greenValue, blueValue);
+                    mutableBitmap.setPixel(i, j, color);
                 }
-                int progressVal = Math.round((long) (100 * (i / (1.0 * mutableBitmap.getWidth()))));
-                //TODO: Update the progress bar. progressVal is the current progress value out of 100
+
+                //Changed the method so that it passes the max of the progressbar and the progress. Let the progressbar handle the math.
+                int max = mutableBitmap.getWidth();
+
+                publishProgress(max, i);
             }
             return mutableBitmap;
         }
