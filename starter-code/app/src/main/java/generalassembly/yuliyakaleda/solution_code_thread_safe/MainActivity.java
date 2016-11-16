@@ -77,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
         protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
-                return sepia(bitmap);
-//                return invertImageColors(bitmap);
+                return invertImageColors(bitmap); //FixMe: Allow access to the other alteration methods.
             } catch (FileNotFoundException e) {
                 Log.d(TAG, "Image uri is not received or recognized");
             }

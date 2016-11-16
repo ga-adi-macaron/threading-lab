@@ -37,8 +37,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/generalassembly/yuliyakaleda/solution_code_thread_safe/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2237">
-              <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+            <state relative-caret-position="960">
+              <caret line="79" column="96" selection-start-line="79" selection-start-column="96" selection-end-line="79" selection-end-column="96" />
               <folding>
                 <element signature="e#1282#1429#0" expanded="true" />
                 <element signature="e#1428#1429#0" expanded="true" />
@@ -1751,8 +1751,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/generalassembly/yuliyakaleda/solution_code_thread_safe/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/generalassembly/yuliyakaleda/solution_code_thread_safe/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2191,8 +2191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/generalassembly/yuliyakaleda/solution_code_thread_safe/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2237">
-          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        <state relative-caret-position="960">
+          <caret line="79" column="96" selection-start-line="79" selection-start-column="96" selection-end-line="79" selection-end-column="96" />
           <folding>
             <element signature="e#1282#1429#0" expanded="true" />
             <element signature="e#1428#1429#0" expanded="true" />
