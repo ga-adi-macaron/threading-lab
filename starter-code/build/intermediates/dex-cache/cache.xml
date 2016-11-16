@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_881aa412dd45a84a7eb146ab6995e44da118eede/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_42914c5a336d87198a33670d6da0275e0925b038/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_9a4067613018a913fd4f4db0cb9eb5078a0d9b9f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_515d6c71e7b38537fe827c2c7021b8f765d738af/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_8c0d293f825a47557b4eae111955bcedfab292eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_1a179edf606ca7d49d79b396e930f7e495b0be6f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_82a1e89e0bc1bdc3cfa86fc2c0d191ecb043c4ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_77c8351ca7d7c092b393146545cb2706893b05c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_3bb6e76e2d9a1d9134186d7a45e268aaa3dec39d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_8a57306ffa4bf2aa97e879d1ce9bbbdd8e4458e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_ab2c2179cfcd4a50f2e01cc91828814963984747/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_3d54fc8716544dc59ba1a7c1bf74741ce8923657/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_5f3b57dde86baa46703a7ece665c45230aa824e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_5b3672b568cb011caf4f8fc0ddc718aad34524c6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4b7026f5b7070601be6b0ffcb5d5092dfdaef1af">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e271734a63626c049065111b46b8c61a47aaa68/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b8f53c6ebc3eb48836bfd04e024442044a74c70c">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0f229342754cf5820a1a76671e6d32395bbdf573/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_c499832b42e10bfb857bae7ef361858224abdede/classes.dex" />
+    </item>
+
+</items>
