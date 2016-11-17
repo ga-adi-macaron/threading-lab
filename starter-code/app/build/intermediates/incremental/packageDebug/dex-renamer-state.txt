@@ -1,0 +1,7 @@
+#Tue Nov 15 18:35:49 EST 2016
+base.0=/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e271734a63626c049065111b46b8c61a47aaa68
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0f229342754cf5820a1a76671e6d32395bbdf573/classes.dex
+base.1=/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0f229342754cf5820a1a76671e6d32395bbdf573
+file.0=/Users/ds/adi stuff/W7_Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0e271734a63626c049065111b46b8c61a47aaa68/classes.dex
