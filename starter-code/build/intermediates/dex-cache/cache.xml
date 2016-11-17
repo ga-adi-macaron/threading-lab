@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_e755ebf00abe00f1322f8ff55d8e17d5a421f7d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_a65283a5bb42a1e66549c6d8df8d890265c8b3d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_9491594fc94b831e6c242e9d0490c68a0976e0d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_2e26ee220a4be7350d767c365cc023466c280b46/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_3b874427575a9d7e7d99f2bb7f5873b4bdfc8ba7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_6fe2ac4dfc961f9402d6f0d17c8bfd47e0353736/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="739a482c11d62be159dd1875997d14233df89971">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7e1d4705e2eeacf7b58a07e8c728d880722413ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_022185a9ed50eacd21f0ff2302024b3e26f36fd5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_de1f074dd1b1728a358606fbbf451f7a54ff2038/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_21662adf8e0c0f6b5dd9e3c8059321b4ef8b058d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_3fc78774899dcd8708c769f0e72f17e85445e6a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_5d2ba4075b28bfeeb4878723ab1a610a95b13504/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_3fc58ad9e9929b4d048023ae3452f7a93a894bd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d568cf76b2f681d2a1d45ceb5e6ae1544b2a7fe4">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7a4ecccb511b516deaa2f1e6a0cbddffa6c47a15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_f5b1a98cfd79961eb28cb1afab96fe22a84645e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_447457fa6e5ae799052f4101a4eb77257c40fb7a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_2e96a96675e66c13994d624a31339fa661822f9e/classes.dex" />
+    </item>
+
+</items>

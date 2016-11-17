@@ -1,0 +1,7 @@
+#Wed Nov 16 00:34:46 EST 2016
+base.0=/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7a4ecccb511b516deaa2f1e6a0cbddffa6c47a15
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7e1d4705e2eeacf7b58a07e8c728d880722413ea/classes.dex
+base.1=/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7e1d4705e2eeacf7b58a07e8c728d880722413ea
+file.0=/Users/student/ADI_Macaron/Labs/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7a4ecccb511b516deaa2f1e6a0cbddffa6c47a15/classes.dex
