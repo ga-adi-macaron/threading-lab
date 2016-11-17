@@ -3,11 +3,13 @@ package generalassembly.yuliyakaleda.solution_code_thread_safe;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         mChooseButton = (Button) findViewById(R.id.choose_button);
         mImageView = (ImageView) findViewById(R.id.image);
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
-        mProgressBar.setMax(100);
 
         mImageView.setImageResource(R.drawable.placeholder);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 selectImage();
             }
         });
+//        findViewById(R.id.b_w_button).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+
     }
 
     @Override
@@ -47,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == MainActivity.RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
 
-            //TODO: Instantiate the async task and execute it
+            AsyncTask<Uri, Integer, Bitmap> mMyTask = new ImageProcessingAsyncTask();
+            mMyTask.execute(selectedImage);
+            // Instantiate the async task and execute it
         }
     }
 
@@ -59,38 +69,45 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 
-    //TODO: Fill in the parameter types
-    private class ImageProcessingAsyncTask extends AsyncTask<> {
+    //Fill in the parameter types
+    private class ImageProcessingAsyncTask extends AsyncTask<Uri, Integer, Bitmap> {
 
-        //TODO: Fill in the parameter type - look at the expected type for the parameter to openInputStream()
+        // Fill in the parameter type - look at the expected type for the parameter to openInputStream()
         @Override
-        protected Bitmap doInBackground() {
+        protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
-                return invertImageColors(bitmap);
+                return invertImageColors(bitmap); //FixMe: Allow access to the other alteration methods.
             } catch (FileNotFoundException e) {
                 Log.d(TAG, "Image uri is not received or recognized");
             }
             return null;
         }
 
-        //TODO: Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
+        //Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
         @Override
-        protected void onProgressUpdate() {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            //TODO: Update the progress bar
+
+            //Update the progress bar
+            mProgressBar.setMax(values[0]);
+            mProgressBar.setProgress(values[1]);
         }
 
-        //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
+
+        //Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
-        protected void onPostExecute() {
-            //TODO: Complete this method
+        protected void onPostExecute(Bitmap image) {
+            super.onPostExecute(image);
+            mImageView.setImageBitmap(image);
+            mProgressBar.setVisibility(View.INVISIBLE);
+
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //TODO: Complete this method
+            mProgressBar.setVisibility(View.VISIBLE);
         }
 
         private Bitmap invertImageColors(Bitmap bitmap) {
@@ -100,14 +117,123 @@ public class MainActivity extends AppCompatActivity {
             //Loop through each pixel, and invert the colors
             for (int i = 0; i < mutableBitmap.getWidth(); i++) {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
-                    //TODO: Get the Red, Green, and Blue values for the current pixel, and reverse them
-                    //TODO: Set the current pixel's color to the new, reversed value
+                    //Get Pixel
+                    int color = mutableBitmap.getPixel(i, j);
+
+                    //Get color values of pixels.
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    //Invert? the values.
+                    redValue = 255 - redValue;
+                    greenValue = 255 - greenValue;
+                    blueValue = 255 - blueValue;
+
+                    //Create new color, and set to pixel.
+                    color = Color.argb(255, redValue, greenValue, blueValue);
+                    mutableBitmap.setPixel(i, j, color);
                 }
-                int progressVal = Math.round((long) (100 * (i / (1.0 * mutableBitmap.getWidth()))));
-                //TODO: Update the progress bar. progressVal is the current progress value out of 100
+
+                //Changed the method so that it passes the max of the progressbar and the progress. Let the progressbar handle the math.
+                int max = mutableBitmap.getWidth();
+
+                publishProgress(max, i);
             }
             return mutableBitmap;
         }
+
+        private Bitmap greyScale(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    int maxVal = Math.max(redValue, greenValue);
+                    maxVal = Math.max(maxVal,blueValue);
+
+                    color =Color.argb(255, maxVal, maxVal,maxVal);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
+
+        private Bitmap bloodStained(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color)/5;
+                    int blueValue = Color.blue(color)/5;
+
+
+                    color =Color.argb(255, redValue, greenValue, blueValue);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
+
+        private Bitmap sepia(Bitmap bitmap) {
+            Bitmap mutableBitMap = bitmap.copy(bitmap.getConfig(), true);
+
+            for (int i = 0; i < mutableBitMap.getWidth(); i++) {
+                for (int j = 0; j < mutableBitMap.getHeight(); j++) {
+                    int color = mutableBitMap.getPixel(i, j);
+
+                    int redValue = Color.red(color);
+                    int greenValue = Color.green(color);
+                    int blueValue = Color.blue(color);
+
+                    //Get lowest grey value
+                    int minValue = Math.min(redValue,greenValue);
+                    minValue = Math.min(minValue,blueValue);
+
+                    //Add a little brownish hue to it.
+                    redValue = minValue+112;
+                    greenValue= minValue+66;
+                    blueValue=minValue+20;
+
+                    int[] values = {redValue, greenValue,blueValue};
+
+                    //Set any values that are above 255, to 255.
+                    for(int x=0;x<3;x++){
+                        if (values[x]>255){
+                            values[x]=255;
+                        }
+                    }
+
+                    color =Color.argb(255, values[0],values[1],values[2]);
+
+                    mutableBitMap.setPixel(i, j, color);
+                }
+                int max = mutableBitMap.getWidth();
+
+                publishProgress(max, i);
+            }
+            return mutableBitMap;
+        }
     }
+
+
 }
+
+
 

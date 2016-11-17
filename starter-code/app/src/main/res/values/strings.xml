@@ -3,4 +3,5 @@
   <string name="choose">Change picture</string>
   <string name="profile_image">this is your profile image</string>
   <string name="profile_image_saved">The image is set as a profile picture</string>
+  <string name="black_and_white">B &amp; W</string>
 </resources>
