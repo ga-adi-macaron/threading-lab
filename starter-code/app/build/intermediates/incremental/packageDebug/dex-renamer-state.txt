@@ -1,0 +1,7 @@
+#Tue Nov 15 15:17:59 EST 2016
+base.0=/Users/jonlieblich/work/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6ce3afb5e8de5ae79706e49c7fc6ecc564a0ccc3
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/jonlieblich/work/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3cc34fc6a5095de1df96dfb2e607bd309f898c3b/classes.dex
+base.1=/Users/jonlieblich/work/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3cc34fc6a5095de1df96dfb2e607bd309f898c3b
+file.0=/Users/jonlieblich/work/threading-lab/starter-code/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6ce3afb5e8de5ae79706e49c7fc6ecc564a0ccc3/classes.dex
