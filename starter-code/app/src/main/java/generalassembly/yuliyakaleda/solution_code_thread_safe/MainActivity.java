@@ -3,6 +3,7 @@ package generalassembly.yuliyakaleda.solution_code_thread_safe;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,8 +13,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getName();
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mImageView;
     private Button mChooseButton;
     private ProgressBar mProgressBar;
+    ImageProcessingAsyncTask mTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             Uri selectedImage = data.getData();
 
             //TODO: Instantiate the async task and execute it
+            ImageProcessingAsyncTask aTask = new ImageProcessingAsyncTask();
+            aTask.execute(selectedImage);
         }
     }
 
@@ -60,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //TODO: Fill in the parameter types
-    private class ImageProcessingAsyncTask extends AsyncTask<> {
+    private class ImageProcessingAsyncTask extends AsyncTask<Uri,Integer,Bitmap> {
 
         //TODO: Fill in the parameter type - look at the expected type for the parameter to openInputStream()
         @Override
-        protected Bitmap doInBackground() {
+        protected Bitmap doInBackground(Uri[] params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
                 return invertImageColors(bitmap);
@@ -76,20 +84,26 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
         @Override
-        protected void onProgressUpdate() {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
+            mProgressBar.setProgress(values[0]);
             //TODO: Update the progress bar
+
         }
 
         //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
-        protected void onPostExecute() {
+        protected void onPostExecute(Bitmap bitmap) {
             //TODO: Complete this method
+            mImageView.setImageBitmap(bitmap);
+            mProgressBar.setVisibility(View.INVISIBLE);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            mProgressBar.setVisibility(View.VISIBLE);
+            Toast.makeText(MainActivity.this, "Working", Toast.LENGTH_SHORT).show();
             //TODO: Complete this method
         }
 
@@ -101,10 +115,15 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < mutableBitmap.getWidth(); i++) {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
                     //TODO: Get the Red, Green, and Blue values for the current pixel, and reverse them
+
+                    int color = mutableBitmap.getPixel(i,j);
+                    mutableBitmap.setPixel(i,j,Color.argb(1,255-Color.red(color),255-Color.green(color),255-Color.green(color)));
+
                     //TODO: Set the current pixel's color to the new, reversed value
                 }
                 int progressVal = Math.round((long) (100 * (i / (1.0 * mutableBitmap.getWidth()))));
                 //TODO: Update the progress bar. progressVal is the current progress value out of 100
+                mProgressBar.setProgress(progressVal);
             }
             return mutableBitmap;
         }
