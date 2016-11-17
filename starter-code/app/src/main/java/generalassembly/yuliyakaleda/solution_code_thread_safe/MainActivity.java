@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             Uri selectedImage = data.getData();
 
             //TODO: Instantiate the async task and execute it
+            AsyncTask<Uri, Integer,Bitmap> myTask = new ImageProcessingAsyncTask();
+            myTask.execute(selectedImage);
         }
     }
 
@@ -60,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //TODO: Fill in the parameter types
-    private class ImageProcessingAsyncTask extends AsyncTask<> {
+    private class ImageProcessingAsyncTask extends AsyncTask<Uri, Integer, Bitmap> {
 
         //TODO: Fill in the parameter type - look at the expected type for the parameter to openInputStream()
         @Override
-        protected Bitmap doInBackground() {
+        protected Bitmap doInBackground(Uri... params) {
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(params[0]));
                 return invertImageColors(bitmap);
@@ -76,21 +78,26 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Fill in the parameter type - what type of data will be passed to this method when it's called from doInBackground()?
         @Override
-        protected void onProgressUpdate() {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
             //TODO: Update the progress bar
+            mProgressBar.setProgress(values[0]);
         }
 
         //TODO: Fill in the parameter type - what type of data will doInBackground() return, which the system then passes here as a parameter?
         @Override
-        protected void onPostExecute() {
+        protected void onPostExecute(Bitmap bitmap) {
             //TODO: Complete this method
+            super.onPostExecute(bitmap);
+            mProgressBar.setVisibility(View.GONE);
+            mImageView.setImageBitmap(bitmap);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             //TODO: Complete this method
+            mProgressBar.setVisibility(View.VISIBLE);
         }
 
         private Bitmap invertImageColors(Bitmap bitmap) {
@@ -102,9 +109,13 @@ public class MainActivity extends AppCompatActivity {
                 for (int j = 0; j < mutableBitmap.getHeight(); j++) {
                     //TODO: Get the Red, Green, and Blue values for the current pixel, and reverse them
                     //TODO: Set the current pixel's color to the new, reversed value
+                    int color = mutableBitmap.getPixel(i,j);
+                    mutableBitmap.setPixel(i,j,Math.abs(color-365));
+
                 }
                 int progressVal = Math.round((long) (100 * (i / (1.0 * mutableBitmap.getWidth()))));
                 //TODO: Update the progress bar. progressVal is the current progress value out of 100
+                onProgressUpdate(progressVal);
             }
             return mutableBitmap;
         }
